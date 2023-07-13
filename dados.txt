@@ -1,0 +1,242 @@
+[
+  {
+    "nome": "Golden Retriever",
+    "descricao": "O Golden Retriever é conhecido por sua personalidade amigável e leal, além de serem excelentes cães de família.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193223/profile/original/golden_retriever-p.jpg?1532539102",
+    "preco": 73,
+    "regiao": "america",
+    "id": "1"
+  },
+  {
+    "nome": "Labrador Retriever",
+    "descricao": "O Labrador Retriever é amplamente conhecido por sua inteligência e habilidades como cão-guia e cão de busca e resgate.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193219/profile/original/labrador-p.jpg?1532539172",
+    "preco": 54,
+    "regiao": "europa",
+    "id": "2"
+  },
+  {
+    "nome": "Poodle",
+    "descricao": "O Poodle é famoso por sua inteligência excepcional e sua pelagem exuberante, sendo uma raça muito versátil e facilmente treinável.",
+    "imagem": "https://www.patasdacasa.com.br/sites/patasdacasa/files/styles/webp/public/noticias/2021/09/poodle-porte-saude-personalidade-preco-um-guia-sobre-a-raca-de-cachorro-queridinha-do-brasil.jpg.webp?itok=SuwlkjDn",
+    "preco": 61,
+    "regiao": "europa",
+    "id": "3"
+  },
+  {
+    "nome": "Beagle",
+    "descricao": "O Beagle é conhecido por seu faro apurado e é frequentemente utilizado como cão de caça e farejador devido a sua habilidade em seguir rastros.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193436/profile/original/beagle-p.jpg?1532538271",
+    "preco": 89,
+    "regiao": "europa",
+    "id": "4"
+  },
+  {
+    "nome": "Bulldog Francês",
+    "descricao": "O Bulldog Francês é um cachorro de pequeno porte, conhecido por sua personalidade divertida e carinhosa, sendo um ótimo companheiro para todas as idades.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193442/profile/original/buldogue_frances-p.jpg?1532538793",
+    "preco": 90,
+    "regiao": "europa",
+    "id": "5"
+  },
+  {
+    "nome": "Boxer",
+    "descricao": "O Boxer é um cão enérgico e brincalhão, além de ser conhecido por sua lealdade inabalável e proteção à família.",
+    "imagem": "https://t2.ea.ltmcdn.com/pt/posts/4/3/2/como_adestrar_um_cachorro_boxer_20234_600.webp",
+    "preco": 44,
+    "regiao": "europa",
+    "id": "6"
+  },
+  {
+    "nome": "Dachshund",
+    "descricao": "O Dachshund, ou 'cachorro salsicha', é famoso por seu corpo alongado e pernas curtas, sendo um cão corajoso e de temperamento leal.",
+    "imagem": "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/Dachshund-Miniature-Smooth-Haired.jpg?itok=zFv4D76f",
+    "preco": 5,
+    "regiao": "europa",
+    "id": "7"
+  },
+  {
+    "nome": "Shih Tzu",
+    "descricao": "O Shih Tzu é uma raça de cão de companhia originária da China, conhecida por sua pelagem longa e sedosa e seu temperamento afetuoso.",
+    "imagem": "https://patrocinados.estadao.com.br/portal-animal/wp-content/uploads/sites/8/2015/12/iStock_000016556419_Large_small.jpg",
+    "preco": 49,
+    "regiao": "asia",
+    "id": "8"
+  },
+  {
+    "nome": "Yorkshire Terrier",
+    "descricao": "O Yorkshire Terrier é um cão de pequeno porte e pelagem longa, sendo uma raça popular como animal de estimação devido ao seu tamanho compacto e personalidade animada.",
+    "imagem": "https://image.cachorrogato.com.br/thumb/500/500/1/imagens/racas/imagem258.jpg",
+    "preco": 82,
+    "regiao": "europa",
+    "id": "9"
+  },
+  {
+    "nome": "Bichon Frisé",
+    "descricao": "O Bichon Frisé é um cão pequeno e peludo, conhecido por sua aparência fofa e pelo comportamento alegre e amigável.",
+    "imagem": "https://image.cachorrogato.com.br/thumb/500/500/1/imagens/racas/imagem18.jpg",
+    "preco": 62,
+    "regiao": "europa",
+    "id": "10"
+  },
+  {
+    "nome": "Bulldog Inglês",
+    "descricao": "O Bulldog Inglês é uma raça de cão de aparência única, com uma cabeça larga e corpo musculoso. Apesar de sua aparência brava, eles são cães afetuosos e tranquilos.",
+    "imagem": "https://www.petlove.com.br/images/breeds/197113/profile/original/buldogue_ingles-p.jpg?1533159495",
+    "preco": 84,
+    "regiao": "europa",
+    "id": "11"
+  },
+  {
+    "nome": "Cocker Spaniel",
+    "descricao": "O Cocker Spaniel é conhecido por sua bela pelagem e temperamento amigável. São cães afetuosos, ótimos como animais de estimação e também como cães de caça.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193533/profile/original/cocker_ingles-p.jpg?1532538860",
+    "preco": 30,
+    "regiao": "europa",
+    "id": "12"
+  },
+  {
+    "nome": "Chihuahua",
+    "descricao": "O Chihuahua é a menor raça de cão do mundo e é famoso por seu tamanho diminuto e personalidade atrevida. São cães de colo muito dedicados aos seus donos.",
+    "imagem": "https://www.petlove.com.br/images/breeds/197823/profile/original/chihuahua_p.jpg?1539807811",
+    "preco": 44,
+    "regiao": "americas",
+    "id": "13"
+  },
+  {
+    "nome": "Basset Hound",
+    "descricao": "O Basset Hound é um cão de porte médio e orelhas longas, conhecido por seu faro excepcional e pela personalidade tranquila e amigável.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193519/profile/original/bassed_hound-p.jpg?1532538201",
+    "preco": 32,
+    "regiao": "europa",
+    "id": "14"
+  },
+  {
+    "nome": "Shiba Inu",
+    "descricao": "O Shiba Inu é uma raça de cão japonesa, conhecida por sua aparência elegante e personalidade independente. São cães enérgicos e leais.",
+    "imagem": "https://www.petlove.com.br/images/breeds/197837/profile/original/shiba-p.jpg?1532540015",
+    "preco": 34,
+    "regiao": "asia",
+    "id": "15"
+  },
+  {
+    "nome": "Dálmata",
+    "descricao": "O Dálmata é uma raça de cão famosa por sua pelagem branca com manchas pretas. São cães enérgicos e amigáveis, conhecidos por sua participação em filmes e desenhos animados.",
+    "imagem": "https://www.petz.com.br/cachorro/racas/dalmata/img/dalmata-guia-racas.webp",
+    "preco": 2,
+    "regiao": "europa",
+    "id": "16"
+  },
+  {
+    "nome": "Pug",
+    "descricao": "O Pug é uma raça de cão de pequeno porte com uma aparência distintiva, com um focinho achatado e rugas no rosto. São cães afetuosos e adoram estar perto de seus donos.",
+    "imagem": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/3831_DB45214686FC9B68.jpg?w=1200&h=1200&crop=1",
+    "preco": 91,
+    "regiao": "europa",
+    "id": "17"
+  },
+  {
+    "nome": "Shar Pei",
+    "descricao": "O Shar Pei é uma raça de cão chinesa conhecida por sua pele solta e enrugada. São cães leais e protetores, além de possuírem um temperamento calmo e tranquilo.",
+    "imagem": "https://www.petz.com.br/cachorro/racas/shar-pei/img/shar-pei-guia-racas.webp",
+    "preco": 62,
+    "regiao": "asia",
+    "id": "18"
+  },
+  {
+    "nome": "Doberman",
+    "descricao": "O Doberman é uma raça de cão atlética e corajosa, conhecida por sua lealdade e habilidades como cão de guarda e cão policial.",
+    "imagem": "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia10422/doberman-cursos-cpt.jpg",
+    "preco": 57,
+    "regiao": "europa",
+    "id": "19"
+  },
+  {
+    "nome": "Husky Siberiano",
+    "descricao": "O Husky Siberiano é uma raça de cão de trabalho originária da Sibéria. São conhecidos por sua aparência deslumbrante e por sua natureza amigável e energética.",
+    "imagem": "https://blog.polipet.com.br/wp-content/uploads/2022/08/AdobeStock_100800827-445x445.jpeg",
+    "preco": 78,
+    "regiao": "europa",
+    "id": "20"
+  },
+  {
+    "nome": "Dogue Alemão",
+    "descricao": "O Dogue Alemão é uma raça de cão gigante e gentil. Apesar de seu tamanho imponente, são cães afetuosos e ótimos companheiros de família.",
+    "imagem": "https://www.petz.com.br/cachorro/racas/dog-alemao/img/dogue-alemao-guia-racas.jpg",
+    "preco": 63,
+    "regiao": "europa",
+    "id": "21"
+  },
+  {
+    "nome": "Border Collie",
+    "descricao": "O Border Collie é uma raça de cão altamente inteligente e atlética, conhecida por suas habilidades em pastoreio e agilidade. São cães dedicados e trabalhadores.",
+    "imagem": "https://box4pets.com.br/cdn/shop/products/CapturadeTela2021-05-18as14.47.17_1024x.png?v=1621360988",
+    "preco": 79,
+    "regiao": "europa",
+    "id": "22"
+  },
+  {
+    "nome": "Bull Terrier",
+    "descricao": "O Bull Terrier é uma raça de cão conhecida por sua cabeça distintiva em formato de ovo. São cães fortes e corajosos, além de possuírem um temperamento afetuoso.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193527/profile/original/bull_terrier-p.jpg?1532538459",
+    "preco": 49,
+    "regiao": "europa",
+    "id": "23"
+  },
+  {
+    "nome": "Bulldog Americano",
+    "descricao": "O Bulldog Americano é um cão de porte médio a grande, conhecido por sua aparência robusta e leal. São cães protetores e afetuosos com suas famílias.",
+    "imagem": "https://media.istockphoto.com/id/1184383620/pt/foto/american-bulldog-sitting-against-white-background.jpg?s=612x612&w=0&k=20&c=S-qz7bU0hahG8FzBOyMIY3HD_vc5GtB44y1mM17JFAM=",
+    "preco": 37,
+    "regiao": "americas",
+    "id": "24"
+  },
+  {
+    "nome": "Basset Hound",
+    "descricao": "O Basset Hound é uma raça de cão de porte médio, conhecida por suas orelhas longas e corpo baixo. São cães afetuosos e excelentes companheiros.",
+    "imagem": "https://www.petlove.com.br/images/breeds/193519/profile/original/bassed_hound-p.jpg?1532538201",
+    "preco": 61,
+    "regiao": "europa",
+    "id": "25"
+  },
+  {
+    "nome": "Chow Chow",
+    "descricao": "O Chow Chow é uma raça de cão de origem chinesa, conhecida por sua aparência majestosa e sua língua azul distintiva. São cães leais e independentes.",
+    "imagem": "https://t1.ea.ltmcdn.com/pt/razas/3/6/5/chow-chow_563_0_600.jpg",
+    "preco": 25,
+    "regiao": "asia",
+    "id": "26"
+  },
+  {
+    "nome": "Pomerânia",
+    "descricao": "O Pomerânia, também conhecido como Spitz Alemão Anão, é um cão pequeno e fofo, com uma pelagem abundante e uma personalidade animada e afetuosa.",
+    "imagem": "https://uploads.metropoles.com/wp-content/uploads/2023/02/27164843/Lulu-da-Pome.jpg",
+    "preco": 48,
+    "regiao": "europa",
+    "id": "27"
+  },
+  {
+    "nome": "Rottweiler",
+    "descricao": "O Rottweiler é uma raça de cão robusta e poderosa, conhecida por sua lealdade e habilidades como cão de guarda. São cães corajosos e protetores.",
+    "imagem": "https://blog.polipet.com.br/wp-content/uploads/2023/04/Screenshot_2-445x445.jpg",
+    "preco": 64,
+    "regiao": "europa",
+    "id": "28"
+  },
+  {
+    "nome": "Cane Corso",
+    "descricao": "O Cane Corso é uma raça de cão italiana, de porte médio a grande. São cães inteligentes, protetores e muito leais a seus donos.",
+    "imagem": "https://www.petlove.com.br/images/breeds/197825/profile/original/cane-corso-p.jpg?1532539702",
+    "preco": 68,
+    "regiao": "europa",
+    "id": "29"
+  },
+  {
+    "nome": "São Bernardo",
+    "descricao": "O São Bernardo é uma raça de cão gigante e amigável, conhecida por seu tamanho imponente e disposição gentil. São cães carinhosos e protetores.",
+    "imagem": "https://www.petz.com.br/cachorro/racas/sao-bernardo-cachorro/img/sao-bernardo-guia-racas.webp",
+    "preco": 72,
+    "regiao": "europa",
+    "id": "30"
+  }
+]

@@ -24,7 +24,7 @@ async function criaCard() {
   return criarCard;
 }
 
-let lista = document.getElementById("listaTodos");
+let lista = document.getElementById("listaAnimais");
 
 async function listaCards() {
   try {

@@ -1,0 +1,11 @@
+/* Rodapé */
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  font-size: 16px;
+  background-color: #754c29;
+  color: white;
+}

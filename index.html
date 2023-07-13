@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1> Chorrinhos.com </h1>
+
+    <div>
+      <input type="checkbox" id="checkbox-menu">
+      <label for="checkbox-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="conteudo__pricipal">
+      <section class="section__todos">
+        <h2>Todos</h2>
+        <div class="lista__todos">
+          <div class="container">
+
+            <ul class="lista__animais" id="listaTodos">
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <div class="menu__lateral" id="menuLateral">
+      <h2>Teste</h2>
+      <div class="filtro__container">
+        <h3> Filtro </h3>
+        <div class="filtro__lista">
+          <div>Opção 1 <input type="checkbox" checked></div>
+          <div>Opção 2 <input type="checkbox" checked></div>
+          <div>Opção 3 <input type="checkbox" checked></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/assets/js/menuLateral.js"></script>
+  <script src="/assets/js/conectaAPI.js" type="module"></script>
+  <footer> Desenvolvido por Felipe Belotto</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+/* Menu lateral */
+.menu__lateral {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: width 0.6s ease, opacity 0.3s ease, transform 0.6s ease;
+}
+
+.menu__lateral-ativo {
+  width: 250px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  background-color: #9a491e;
+}
+
+.menu__lateral-ativo h2 {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(10, 10, 10, 0.37);
+  color: white;
+}
+
+.menu__lateral-ativo .filtro__container {
+  padding: 30px 0 0 0;
+}
+
+.menu__lateral-ativo .filtro__container h3 {
+  background-color: rgba(10, 10, 10, 0.37);
+  text-align: center;
+  color: white;
+}
+
+.menu__lateral-ativo .filtro__container .filtro__lista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}

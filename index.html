@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cachorrinhos.com</title>
+  <link rel="shortcut icon" type="image/svg" href="/assets/img/coracaovermelho.svg" />
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +13,9 @@
 <body>
 
   <header>
-    <a href="index.html">
-      <h1>Cachorrinhos.com</h1>
-    </a>
+    <div class="header__logo">
+      <a href="/index.html"><img src="assets/img/Pata.svg" alt="imagem de pata"></a>
+    </div>
 
     <div>
       <input type="checkbox" id="checkbox-menu">
@@ -24,17 +25,20 @@
         <span></span>
       </label>
     </div>
+
   </header>
 
   <main>
 
     <div class="conteudo__pricipal">
+      <div id="cardSelecionado" class="card__selecionado"></div>
+
       <section class="section__todos">
         <h2>Todos</h2>
         <div class="lista__todos" id="listaTodos">
           <div class="container">
 
-            <ul class="lista__animais" id="listaAnimais">
+            <ul class="lista__animais" id="listaAnimais"></ul>
           </div>
 
           <button class="lista__botao" id="botaoVerMais">Ver mais</button>
@@ -45,17 +49,13 @@
     </div>
 
     <div class="menu__lateral" id="menuLateral">
-      <h2>Teste</h2>
-      <div class="filtro__container">
-        <h3>Continente</h3>
-        <div class="filtro__lista">
-          <div><input type="checkbox" checked>Africa</div>
-          <div><input type="checkbox" checked>America</div>
-          <div><input type="checkbox" checked>Asia</div>
-          <div><input type="checkbox" checked>Europa</div>
+      <div class="sobre__nos">
+        <h2>Sobre nós</h2>
+        <p> Somos uma empresa de Campinas dedicada a unir animais amorosos a donos amorosos, proporcionando a todos a oportunidade de terem um fiel e querido companheiro para a vida. Nosso objetivo é criar laços duradouros entre humanos e seus adoráveis parceiros de quatro patas.</p>
+        <div>
+
         </div>
       </div>
-    </div>
 
   </main>
 

@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ghostwhite;
+  background-color: #f39237;
 }
 
 /* Conteúdo principal */
@@ -24,4 +24,8 @@ main {
   flex: 1;
   justify-content: space-between;
   overflow: hidden;
+}
+
+.display-none {
+  display: none;
 }

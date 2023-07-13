@@ -1,21 +1,22 @@
 /* Menu lateral */
 .menu__lateral {
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(100%);
-  transition: width 0.6s ease, opacity 0.3s ease, transform 0.6s ease;
+  display: none;
 }
 
 .menu__lateral-ativo {
-  width: 250px;
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
   background-color: #9a491e;
 }
 
-.menu__lateral-ativo h2 {
+.menu__lateral-ativo .sobre__nos {
+  display: flex;
+  flex-direction: column;
+  max-height: 30%;
+}
+
+.menu__lateral-ativo .sobre__nos h2 {
   width: 100%;
   text-align: center;
   background-color: rgba(10, 10, 10, 0.37);
@@ -23,27 +24,10 @@
   padding: 5px;
 }
 
-.menu__lateral-ativo .filtro__container {
-  padding: 30px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu__lateral-ativo .filtro__container h3 {
-  background-color: rgba(10, 10, 10, 0.37);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  width: 100%;
-  padding: 5px 0px;
-}
-
-.menu__lateral-ativo .filtro__container .filtro__lista {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
+.menu__lateral-ativo .sobre__nos p {
+  padding: 5px;
+  text-align: center;
+  font-size: 22px;
+  flex-wrap: wrap;
   color: white;
 }

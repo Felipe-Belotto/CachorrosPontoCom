@@ -9,6 +9,14 @@ header {
   padding: 0 20px;
 }
 
+.header__logo {
+  display: flex;
+}
+
+.header__logo img {
+  width: 1.2em;
+}
+
 /* Checkbox do menu */
 #checkbox-menu {
   position: absolute;

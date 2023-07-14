@@ -31,7 +31,7 @@ async function criaCard() {
         <p>${descricao}</p>
         <br>
         <strong>Região</strong>
-        <br>
+        <br><br>
         <p>${regiao}</p>
         <br>
         <button class="botao_orcamento">Solicitar orçamento</button>

@@ -9,7 +9,7 @@ async function recebeAPI() {
 async function criaCard() {
   const dadosApi = await recebeAPI();
 
-  function criarCard(nome, imagem, preco, descricao, regiao) {
+  function criarCard(nome, imagem, curtidas, descricao, regiao) {
     const card = document.createElement("li");
     card.className = "card";
     card.innerHTML = `
@@ -21,7 +21,7 @@ async function criaCard() {
         <p class="titulo">${nome}</p>
         <div class="card__botaoCurtir">
           <button class="botaoCurtir"><img class="imgCurtir" src="assets/img/coracaobranco.svg" alt="botao curtir"></button>
-          <p class="preco">${preco}</p>
+          <p class="curtidas">${curtidas}</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ async function criaCard() {
     const descricaoElement = card.querySelector(".descricao");
     const botaoCurtir = card.querySelector(".botaoCurtir");
     const imgCurtir = card.querySelector(".imgCurtir");
-    const precoElement = card.querySelector(".preco");
+    const curtidasElement = card.querySelector(".card__botaoCurtir p.curtidas");
 
     let curtido = false;
 
@@ -55,14 +55,14 @@ async function criaCard() {
     function toggleCurtir() {
       if (curtido) {
         imgCurtir.src = "assets/img/coracaobranco.svg";
-        precoElement.textContent = (
-          parseInt(precoElement.textContent) - 1
+        curtidasElement.textContent = (
+          parseInt(curtidasElement.textContent) - 1
         ).toString();
         curtido = false;
       } else {
         imgCurtir.src = "assets/img/coracaovermelho.svg";
-        precoElement.textContent = (
-          parseInt(precoElement.textContent) + 1
+        curtidasElement.textContent = (
+          parseInt(curtidasElement.textContent) + 1
         ).toString();
         curtido = true;
       }
@@ -73,10 +73,12 @@ async function criaCard() {
       if (cardSelecionado) {
         const imgCurtirSelecionado =
           cardSelecionado.querySelector(".imgCurtir");
-        const precoElementSelecionado = cardSelecionado.querySelector(".preco");
+        const curtidasElementSelecionado = cardSelecionado.querySelector(
+          ".card__botaoCurtir .curtidas"
+        );
 
         imgCurtirSelecionado.src = imgCurtir.src;
-        precoElementSelecionado.textContent = precoElement.textContent;
+        curtidasElementSelecionado.textContent = curtidasElement.textContent;
       }
     }
 
@@ -87,7 +89,7 @@ async function criaCard() {
       descricaoElement,
       botaoCurtir,
       imgCurtir,
-      precoElement,
+      curtidasElement,
     ];
   }
 
@@ -124,11 +126,11 @@ async function listaCards() {
           descricaoElement,
           botaoCurtir,
           imgCurtir,
-          precoElement,
+          curtidasElement,
         ] = criarCardFunction(
           elemento.nome,
           elemento.imagem,
-          elemento.preco,
+          elemento.curtidas,
           elemento.descricao,
           elemento.regiao
         );

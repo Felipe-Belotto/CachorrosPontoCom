@@ -9,19 +9,32 @@ async function recebeAPI() {
 async function criaCard() {
   const dadosApi = await recebeAPI();
 
-  function criarCard(nome, imagem, preco, descricao) {
+  function criarCard(nome, imagem, preco, descricao, regiao) {
     const card = document.createElement("li");
     card.className = "card";
     card.innerHTML = `
-    <div>
-      <img class="imagem" src="${imagem}">
+      <div>
+        <img class="imagem" src="${imagem}">
       </div>
-      <p class="titulo">${nome}</p>
-      <p class="descricao display-none"><strong>Sobre mim</strong><br><br>${descricao}
-      </p>
-      <div class="card__botaoCurtir">
-        <button class="botaoCurtir"><img class="imgCurtir" src="assets/img/coracaobranco.svg" alt="botao curtir"></button>
-        <p class="preco">${preco}</p>
+
+      <div class="card__nome__container">
+        <p class="titulo">${nome}</p>
+        <div class="card__botaoCurtir">
+          <button class="botaoCurtir"><img class="imgCurtir" src="assets/img/coracaobranco.svg" alt="botao curtir"></button>
+          <p class="preco">${preco}</p>
+        </div>
+      </div>
+
+      <div class="descricao display-none">
+        <strong>Sobre mim</strong>
+        <br><br>
+        <p>${descricao}</p>
+        <br>
+        <strong>Região</strong>
+        <br>
+        <p>${regiao}</p>
+        <br>
+        <button class="botao_orcamento">Solicitar orçamento</button>
       </div>
     `;
 
@@ -73,6 +86,7 @@ async function criaCard() {
       tituloElement,
       descricaoElement,
       botaoCurtir,
+      imgCurtir,
       precoElement,
     ];
   }
@@ -82,47 +96,87 @@ async function criaCard() {
 
 let lista = document.getElementById("listaAnimais");
 let cardSelecionado = document.getElementById("cardSelecionado");
+let tabsEscolher = document.querySelectorAll(".tabs__escolher button");
 
 async function listaCards() {
   try {
     const criarCardFunction = await criaCard();
     const dadosLista = await recebeAPI();
 
-    dadosLista.forEach((elemento) => {
-      const [
-        card,
-        imagemElement,
-        tituloElement,
-        descricaoElement,
-        botaoCurtir,
-        precoElement,
-      ] = criarCardFunction(
-        elemento.nome,
-        elemento.imagem,
-        elemento.preco,
-        elemento.descricao
-      );
+    function filtrarLista(regiao) {
+      if (regiao === "todos") {
+        return dadosLista;
+      } else {
+        return dadosLista.filter((animal) => animal.regiao === regiao);
+      }
+    }
 
-      lista.appendChild(card);
+    function exibirListaFiltrada(regiao) {
+      lista.innerHTML = "";
 
-      imagemElement.addEventListener("click", function () {
-        const cardSelecionadoClone = card.cloneNode(true);
-        cardSelecionadoClone.classList.add("card-ativo");
-        cardSelecionadoClone
-          .querySelector(".descricao")
-          .classList.remove("display-none");
-        cardSelecionado.innerHTML = "";
-        cardSelecionado.appendChild(cardSelecionadoClone);
-        const header = document.querySelector("header");
-        header.scrollIntoView({ behavior: "smooth", block: "start" });
+      const listaFiltrada = filtrarLista(regiao);
 
-        const botaoCurtirSelecionado =
-          cardSelecionadoClone.querySelector(".botaoCurtir");
-        botaoCurtirSelecionado.addEventListener("click", function () {
-          botaoCurtir.click();
+      listaFiltrada.forEach((elemento) => {
+        const [
+          card,
+          imagemElement,
+          tituloElement,
+          descricaoElement,
+          botaoCurtir,
+          imgCurtir,
+          precoElement,
+        ] = criarCardFunction(
+          elemento.nome,
+          elemento.imagem,
+          elemento.preco,
+          elemento.descricao,
+          elemento.regiao
+        );
+
+        lista.appendChild(card);
+
+        imagemElement.addEventListener("click", function () {
+          const cardSelecionadoClone = card.cloneNode(true);
+          cardSelecionadoClone.classList.add("card-ativo");
+          cardSelecionadoClone
+            .querySelector(".descricao")
+            .classList.remove("display-none");
+          cardSelecionado.innerHTML = "";
+          cardSelecionado.appendChild(cardSelecionadoClone);
+          const sectionTodos = document.getElementById("sectionTodos");
+          sectionTodos.style.display = "none";
+          const header = document.querySelector("header");
+          header.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          const botaoCurtirSelecionado =
+            cardSelecionadoClone.querySelector(".botaoCurtir");
+          botaoCurtirSelecionado.addEventListener("click", function () {
+            botaoCurtir.click();
+          });
+        });
+
+        const botaoOrcamento = card.querySelector(".botao_orcamento");
+        botaoOrcamento.addEventListener("click", function () {
+          // Lógica para o botão "Solicitar orçamento"
         });
       });
+    }
+
+    tabsEscolher.forEach((tab) => {
+      tab.addEventListener("click", function () {
+        tabsEscolher.forEach((tab) => {
+          tab.classList.remove("tab-selecionada");
+        });
+        this.classList.add("tab-selecionada");
+
+        const regiaoSelecionada = this.id
+          .replace("botaoEscolher", "")
+          .toLowerCase();
+        exibirListaFiltrada(regiaoSelecionada);
+      });
     });
+
+    exibirListaFiltrada("todos");
   } catch (error) {
     lista.innerHTML = `<h2>Não foi possível carregar a lista</h2>`;
     console.error(error);

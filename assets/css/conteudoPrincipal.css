@@ -5,21 +5,37 @@
   padding: 20px 0 0 0;
 }
 
-.conteudo__pricipal h2 {
+.tabs__escolher {
   width: 100%;
   margin: 0 0 10px 0;
-  padding: 0 0 0 25px;
+  padding: 10px 0 10px 25px;
+  font-size: 34px;
+}
+
+.tabs__escolher button {
+  cursor: pointer;
+}
+
+.tabs__escolher button.tab-selecionada {
+  background-color: #754c29;
+  color: white;
+}
+
+.tabs__escolher button {
+  padding: 10px;
+  background-color: white;
   color: black;
-  font-size: 28px;
+  border-radius: 5px;
 }
 
 .section__todos {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .lista__todos {
   display: flex;
-  gap: 15px;
   padding: 10px 0 10px 25px;
   background-color: #07070733;
   max-height: 100%;
@@ -30,7 +46,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 10px 0 10px 25px;
   background-color: #07070733;
   max-height: 100%;
   width: 100%;
@@ -38,6 +53,17 @@
 
 .lista__todos .container {
   display: flex;
+}
+
+.lista__botao {
+  width: 100%;
+  border: none;
+  padding: 25px;
+  font-size: 28px;
+  color: ghostwhite;
+  background-color: rgba(0, 0, 0, 0.274);
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .lista__animais {
@@ -58,6 +84,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-width: 300px;
   max-height: 100%;
@@ -71,12 +98,14 @@
 
 .card-ativo {
   display: flex;
+  align-items: center;
+  justify-content: start;
   max-width: 500px;
-  height: 100%;
+  height: 650px;
   text-align: center;
   gap: 10px;
   border-radius: 5px;
-  margin: 0 5px;
+  margin: 10px 5px;
   background-color: white;
   backdrop-filter: blur(5px);
   color: black;
@@ -90,6 +119,7 @@
   width: 100%;
   height: 300px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .card .titulo {
@@ -125,9 +155,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-}
-
-.card__botaoCurtir:hover {
+  cursor: pointer;
 }
 
 .card__botaoCurtir img {
@@ -138,18 +166,29 @@
   font-size: 20px;
 }
 
-.lista__botao {
-  width: 100%;
-  border: none;
-  padding: 25px;
-  font-size: 28px;
-  color: #9a491e;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
 .card__selecionado {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao_orcamento {
+  background-color: green;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.botao_orcamento:hover {
+  background-color: rgba(1, 95, 1, 0.877);
+  cursor: pointer;
+}
+
+.card__nome__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

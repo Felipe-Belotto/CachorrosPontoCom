@@ -21,19 +21,19 @@ async function criaCard() {
         <p class="titulo">${nome}</p>
         <div class="card__botaoCurtir">
           <button class="botaoCurtir"><img class="imgCurtir" src="assets/img/coracaobranco.svg" alt="botao curtir"></button>
-          <p class="curtidas">${curtidas}</p>
+          <p class="curtidas">${curtidas} curtidas  </p>
         </div>
       </div>
 
-      <div class="descricao display-none">
-        <strong>Sobre mim</strong>
-        <br><br>
+      <div class="descricao">
+        <strong>SOBRE MIM</strong>
+        
         <p>${descricao}</p>
-        <br>
-        <strong>Região</strong>
-        <br><br>
-        <p>${regiao}</p>
-        <br>
+        
+        <strong>REGIÃO</strong>
+        
+        <p class="regiao">${regiao}</p>
+        
         <button class="botao_orcamento">Solicitar orçamento</button>
       </div>
     `;
@@ -55,15 +55,13 @@ async function criaCard() {
     function toggleCurtir() {
       if (curtido) {
         imgCurtir.src = "assets/img/coracaobranco.svg";
-        curtidasElement.textContent = (
-          parseInt(curtidasElement.textContent) - 1
-        ).toString();
+        curtidasElement.textContent =
+          (parseInt(curtidasElement.textContent) - 1).toString() + " curtidas";
         curtido = false;
       } else {
         imgCurtir.src = "assets/img/coracaovermelho.svg";
-        curtidasElement.textContent = (
-          parseInt(curtidasElement.textContent) + 1
-        ).toString();
+        curtidasElement.textContent =
+          (parseInt(curtidasElement.textContent) + 1).toString() + " curtidas";
         curtido = true;
       }
     }
@@ -140,9 +138,10 @@ async function listaCards() {
         imagemElement.addEventListener("click", function () {
           const cardSelecionadoClone = card.cloneNode(true);
           cardSelecionadoClone.classList.add("card-ativo");
-          cardSelecionadoClone
-            .querySelector(".descricao")
-            .classList.remove("display-none");
+          const descricaoSelecionada =
+            cardSelecionadoClone.querySelector(".descricao");
+          descricaoSelecionada.style.display = "flex"; // Altera o estilo da classe .descricao para display: flex
+
           cardSelecionado.innerHTML = "";
           cardSelecionado.appendChild(cardSelecionadoClone);
           const sectionTodos = document.getElementById("sectionTodos");

@@ -1,3 +1,4 @@
+// Função assíncrona para receber dados da API
 async function recebeAPI() {
   const conexao = await fetch(
     "https://64af422ac85640541d4e3c2f.mockapi.io/lista"
@@ -6,9 +7,11 @@ async function recebeAPI() {
   return listaApi;
 }
 
+// Função assíncrona para criar o card
 async function criaCard() {
   const dadosApi = await recebeAPI();
 
+  // Função para criar um card
   function criarCard(nome, imagem, curtidas, descricao, regiao) {
     const card = document.createElement("li");
     card.className = "card";
@@ -21,7 +24,7 @@ async function criaCard() {
         <p class="titulo">${nome}</p>
         <div class="card__botaoCurtir">
           <button class="botaoCurtir"><img class="imgCurtir" src="assets/img/coracaobranco.svg" alt="botao curtir"></button>
-          <p class="curtidas">${curtidas} curtidas  </p>
+          <p class="curtidas">${curtidas} curtidas</p>
         </div>
       </div>
 
@@ -34,7 +37,8 @@ async function criaCard() {
         
         <p class="regiao">${regiao}</p>
         
-        <button class="botao_orcamento">Solicitar orçamento</button>
+        <button class="cardSelecionado__botaoOrcamento" id="botaoOrcamento">Solicitar orçamento</button>
+        <button class="cardSelecionado__botaoVoltar" id="botaoVoltar">Voltar</button>
       </div>
     `;
 
@@ -47,6 +51,7 @@ async function criaCard() {
 
     let curtido = false;
 
+    // Função para alternar o estado de curtida do card
     botaoCurtir.addEventListener("click", function () {
       toggleCurtir();
       sincronizarCurtir();
@@ -66,6 +71,7 @@ async function criaCard() {
       }
     }
 
+    // Função para sincronizar o estado de curtida com o card selecionado
     function sincronizarCurtir() {
       const cardSelecionado = document.querySelector("#cardSelecionado .card");
       if (cardSelecionado) {
@@ -94,15 +100,18 @@ async function criaCard() {
   return criarCard;
 }
 
+// Elementos do DOM
 let lista = document.getElementById("listaAnimais");
 let cardSelecionado = document.getElementById("cardSelecionado");
 let tabsEscolher = document.querySelectorAll(".tabs__escolher button");
 
+// Função para exibir a lista de cards
 async function listaCards() {
   try {
     const criarCardFunction = await criaCard();
     const dadosLista = await recebeAPI();
 
+    // Função para filtrar a lista de acordo com a região selecionada
     function filtrarLista(regiao) {
       if (regiao === "todos") {
         return dadosLista;
@@ -111,6 +120,7 @@ async function listaCards() {
       }
     }
 
+    // Função para exibir a lista filtrada
     function exibirListaFiltrada(regiao) {
       lista.innerHTML = "";
 
@@ -135,15 +145,17 @@ async function listaCards() {
 
         lista.appendChild(card);
 
+        // Evento de clique na imagem do card
         imagemElement.addEventListener("click", function () {
           const cardSelecionadoClone = card.cloneNode(true);
           cardSelecionadoClone.classList.add("card-ativo");
           const descricaoSelecionada =
             cardSelecionadoClone.querySelector(".descricao");
-          descricaoSelecionada.style.display = "flex"; // Altera o estilo da classe .descricao para display: flex
+          descricaoSelecionada.style.display = "flex";
 
           cardSelecionado.innerHTML = "";
           cardSelecionado.appendChild(cardSelecionadoClone);
+          cardSelecionado.style.display = "flex";
           const sectionTodos = document.getElementById("sectionTodos");
           sectionTodos.style.display = "none";
           const header = document.querySelector("header");
@@ -154,15 +166,27 @@ async function listaCards() {
           botaoCurtirSelecionado.addEventListener("click", function () {
             botaoCurtir.click();
           });
+
+          const botaoVoltar = cardSelecionadoClone.querySelector(
+            ".cardSelecionado__botaoVoltar"
+          );
+          botaoVoltar.addEventListener("click", function () {
+            cardSelecionado.innerHTML = "";
+            cardSelecionado.style.display = "none";
+            sectionTodos.style.display = "flex";
+          });
         });
 
-        const botaoOrcamento = card.querySelector(".botao_orcamento");
+        const botaoOrcamento = card.querySelector(
+          ".cardSelecionado__botaoOrcamento"
+        );
         botaoOrcamento.addEventListener("click", function () {
           // Lógica para o botão "Solicitar orçamento"
         });
       });
     }
 
+    // Eventos de clique nas abas
     tabsEscolher.forEach((tab) => {
       tab.addEventListener("click", function () {
         tabsEscolher.forEach((tab) => {
@@ -184,4 +208,5 @@ async function listaCards() {
   }
 }
 
+// Chamada da função para exibir a lista de cards
 listaCards();

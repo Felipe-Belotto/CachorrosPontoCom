@@ -1,34 +1,26 @@
-/* Menu lateral */
+.menu__lateral-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
 .menu__lateral {
   display: none;
 }
 
 .menu__lateral-ativo {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  width: 15%;
-  background-color: #9a491e;
+  backdrop-filter: blur(2px);
+  height: 150px;
+  padding: 25px;
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
 }
 
-.menu__lateral-ativo .sobre__nos {
-  display: flex;
-  flex-direction: column;
-  max-height: 30%;
-}
-
-.menu__lateral-ativo .sobre__nos h2 {
-  width: 100%;
-  text-align: center;
-  background-color: rgba(10, 10, 10, 0.37);
-  color: white;
-  padding: 5px;
-}
-
-.menu__lateral-ativo .sobre__nos p {
-  padding: 5px;
-  text-align: center;
-  font-size: 22px;
-  flex-wrap: wrap;
-  color: white;
-  line-height: 1.2;
+.menu__lateral-ativo img {
+  width: 100px;
 }

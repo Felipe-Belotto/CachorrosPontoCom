@@ -38,8 +38,7 @@
 .lista__todos {
   display: flex;
   padding: 10px 0 10px 25px;
-  background-color: #07070769;
-  backdrop-filter: blur(2px);
+  background-color: #242424af;
   max-height: 100%;
   width: 100%;
 }
@@ -83,4 +82,44 @@
   flex-wrap: wrap;
   width: 100%;
   transition: width 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .lista__todos {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lista__animais {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: width 0.5s ease;
+  }
+
+  .tabs__escolher {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tabs__escolher button {
+    width: 100%;
+    background-color: white;
+    padding: 15px 6px;
+    color: black;
+    font-size: 16px;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
+  .tabs__escolher button.tab-selecionada {
+    background-color: #754c29;
+    color: white;
+  }
 }

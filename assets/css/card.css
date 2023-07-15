@@ -106,6 +106,10 @@
   font-weight: bold;
 }
 
+.card .descricao p {
+  width: 70%;
+}
+
 .card__botaoCurtir p {
   font-size: 20px;
 }
@@ -158,5 +162,9 @@
   .card-ativo .imagem{
     width: 100%;
     height: 100%;
+  }
+
+  .card .descricao p {
+    width: 100%;
   }
 }

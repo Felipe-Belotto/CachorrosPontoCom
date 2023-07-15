@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px 0 20px 0;
 }
 
 .tabs__escolher {
@@ -39,7 +38,8 @@
 .lista__todos {
   display: flex;
   padding: 10px 0 10px 25px;
-  background-color: #07070733;
+  background-color: #07070769;
+  backdrop-filter: blur(2px);
   max-height: 100%;
   width: 100%;
 }
@@ -48,7 +48,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: #07070733;
+  background-color: #07070769;
+  backdrop-filter: blur(2px);
   max-height: 100%;
   width: 100%;
 }
@@ -66,6 +67,7 @@
   background-color: rgba(0, 0, 0, 0.274);
   cursor: pointer;
   text-transform: uppercase;
+  border-radius: 5px 0 0 5px;
 }
 
 .lista__animais {

@@ -100,10 +100,13 @@ async function criaCard() {
   return criarCard;
 }
 
-// Elementos do DOM
+// Elemento do DOM
 let lista = document.getElementById("listaAnimais");
 let cardSelecionado = document.getElementById("cardSelecionado");
 let tabsEscolher = document.querySelectorAll(".tabs__escolher button");
+
+// Variável para armazenar a posição do scroll
+let scrollPosicao = 0;
 
 // Função para exibir a lista de cards
 async function listaCards() {
@@ -147,6 +150,9 @@ async function listaCards() {
 
         // Evento de clique na imagem do card
         imagemElement.addEventListener("click", function () {
+          // Armazena a posição atual do scroll
+          scrollPosicao = window.scrollY;
+
           const cardSelecionadoClone = card.cloneNode(true);
           cardSelecionadoClone.classList.add("card-ativo");
           const descricaoSelecionada =
@@ -172,8 +178,8 @@ async function listaCards() {
           );
           botaoVoltar.addEventListener("click", function () {
             cardSelecionado.innerHTML = "";
-            cardSelecionado.style.display = "none";
             sectionTodos.style.display = "flex";
+            window.scrollTo(0, scrollPosicao);
           });
         });
 
@@ -200,6 +206,9 @@ async function listaCards() {
         exibirListaFiltrada(regiaoSelecionada);
       });
     });
+
+    // Definir a aba "Todos" como selecionada por padrão
+    tabsEscolher[0].classList.add("tab-selecionada");
 
     exibirListaFiltrada("todos");
   } catch (error) {

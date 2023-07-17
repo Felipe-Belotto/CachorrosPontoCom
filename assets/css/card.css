@@ -118,23 +118,10 @@
   text-transform: uppercase;
 }
 
-.cardSelecionado__botaoOrcamento {
-  width: 300px;
-  background-color: green;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.cardSelecionado__botaoOrcamento:hover {
-  background-color: rgba(1, 95, 1, 0.877);
-  cursor: pointer;
-}
-
 .cardSelecionado__botaoVoltar {
   width: 150px;
-  background-color: whitesmoke;
-  color: black;
+  background-color: rgb(90, 48, 0);
+  color: white;
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
@@ -142,7 +129,7 @@
 }
 
 .cardSelecionado__botaoVoltar:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: rgba(90, 48, 0, 0.534);
   cursor: pointer;
 }
 
@@ -159,7 +146,7 @@
     cursor: pointer;
   }
 
-  .card-ativo .imagem{
+  .card-ativo .imagem {
     width: 100%;
     height: 100%;
   }

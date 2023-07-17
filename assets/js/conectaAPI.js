@@ -37,7 +37,6 @@ async function criaCard() {
         
         <p class="regiao">${regiao}</p>
         
-        <button class="cardSelecionado__botaoOrcamento" id="botaoOrcamento">Solicitar orçamento</button>
         <button class="cardSelecionado__botaoVoltar" id="botaoVoltar">Voltar</button>
       </div>
     `;
@@ -181,13 +180,6 @@ async function listaCards() {
             sectionTodos.style.display = "flex";
             window.scrollTo(0, scrollPosicao);
           });
-        });
-
-        const botaoOrcamento = card.querySelector(
-          ".cardSelecionado__botaoOrcamento"
-        );
-        botaoOrcamento.addEventListener("click", function () {
-          // Lógica para o botão "Solicitar orçamento"
         });
       });
     }

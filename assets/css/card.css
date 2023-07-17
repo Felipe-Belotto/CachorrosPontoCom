@@ -21,10 +21,10 @@
   align-items: center;
   justify-content: start;
   flex-direction: column !important;
-  width: 50%;
-  height: 100%;
   text-align: center;
+  width: 60%;
   gap: 10px;
+  flex: none;
   border-radius: 5px;
   margin: 10px 5px;
   backdrop-filter: blur(5px);

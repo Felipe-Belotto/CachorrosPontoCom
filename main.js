@@ -30,11 +30,9 @@ async function criaCard() {
 
       <div class="descricao">
         <strong>SOBRE MIM</strong>
-        
         <p>${descricao}</p>
         
         <strong>REGIÃO</strong>
-        
         <p class="regiao">${regiao}</p>
         
         <button class="cardSelecionado__botaoOrcamento" id="botaoOrcamento">Solicitar orçamento</button>
@@ -51,7 +49,6 @@ async function criaCard() {
 
     let curtido = false;
 
-    // Função para alternar o estado de curtida do card
     botaoCurtir.addEventListener("click", function () {
       toggleCurtir();
       sincronizarCurtir();
@@ -71,7 +68,6 @@ async function criaCard() {
       }
     }
 
-    // Função para sincronizar o estado de curtida com o card selecionado
     function sincronizarCurtir() {
       const cardSelecionado = document.querySelector("#cardSelecionado .card");
       if (cardSelecionado) {
@@ -86,15 +82,60 @@ async function criaCard() {
       }
     }
 
-    return [
-      card,
-      imagemElement,
-      tituloElement,
-      descricaoElement,
-      botaoCurtir,
-      imgCurtir,
-      curtidasElement,
-    ];
+    // Função para criar o card selecionado
+    function criarCardSelecionado() {
+      const cardSelecionadoClone = card.cloneNode(true);
+      cardSelecionadoClone.classList.add("card-ativo");
+      const descricaoSelecionada =
+        cardSelecionadoClone.querySelector(".descricao");
+      descricaoSelecionada.style.display = "flex";
+
+      const cardSelecionado = document.getElementById("cardSelecionado");
+      cardSelecionado.innerHTML = "";
+      cardSelecionado.appendChild(cardSelecionadoClone);
+      cardSelecionado.style.display = "flex";
+
+      const sectionTodos = document.getElementById("sectionTodos");
+      sectionTodos.style.display = "none";
+
+      const header = document.querySelector("header");
+      header.style.display = "none";
+
+      const footer = document.querySelector("footer");
+      footer.style.display = "none";
+
+      function exibirCardSelecionado() {
+        cardSelecionado.style.display = "flex";
+        header.style.display = "none";
+        footer.style.display = "none";
+      }
+
+      function esconderCardSelecionado() {
+        cardSelecionado.style.display = "none";
+        header.style.display = "flex";
+        footer.style.display = "flex";
+      }
+
+      const imagemElement = card.querySelector(".imagem");
+      imagemElement.addEventListener("click", function () {
+        // Armazena a posição atual do scroll
+        scrollPosicao = window.scrollY;
+
+        exibirCardSelecionado();
+      });
+
+      const botaoVoltar = cardSelecionadoClone.querySelector(
+        ".cardSelecionado__botaoVoltar"
+      );
+      botaoVoltar.addEventListener("click", function () {
+        cardSelecionado.innerHTML = "";
+        sectionTodos.style.display = "flex";
+        window.scrollTo(0, scrollPosicao);
+        esconderCardSelecionado();
+      });
+    }
+
+    return { card, criarCardSelecionado };
   }
 
   return criarCard;
@@ -130,15 +171,7 @@ async function listaCards() {
       const listaFiltrada = filtrarLista(regiao);
 
       listaFiltrada.forEach((elemento) => {
-        const [
-          card,
-          imagemElement,
-          tituloElement,
-          descricaoElement,
-          botaoCurtir,
-          imgCurtir,
-          curtidasElement,
-        ] = criarCardFunction(
+        const { card, criarCardSelecionado } = criarCardFunction(
           elemento.nome,
           elemento.imagem,
           elemento.curtidas,
@@ -148,46 +181,12 @@ async function listaCards() {
 
         lista.appendChild(card);
 
-        // Evento de clique na imagem do card
+        const imagemElement = card.querySelector(".imagem");
         imagemElement.addEventListener("click", function () {
           // Armazena a posição atual do scroll
           scrollPosicao = window.scrollY;
 
-          const cardSelecionadoClone = card.cloneNode(true);
-          cardSelecionadoClone.classList.add("card-ativo");
-          const descricaoSelecionada =
-            cardSelecionadoClone.querySelector(".descricao");
-          descricaoSelecionada.style.display = "flex";
-
-          cardSelecionado.innerHTML = "";
-          cardSelecionado.appendChild(cardSelecionadoClone);
-          cardSelecionado.style.display = "flex";
-          const sectionTodos = document.getElementById("sectionTodos");
-          sectionTodos.style.display = "none";
-          const header = document.querySelector("header");
-          header.scrollIntoView({ behavior: "smooth", block: "start" });
-
-          const botaoCurtirSelecionado =
-            cardSelecionadoClone.querySelector(".botaoCurtir");
-          botaoCurtirSelecionado.addEventListener("click", function () {
-            botaoCurtir.click();
-          });
-
-          const botaoVoltar = cardSelecionadoClone.querySelector(
-            ".cardSelecionado__botaoVoltar"
-          );
-          botaoVoltar.addEventListener("click", function () {
-            cardSelecionado.innerHTML = "";
-            sectionTodos.style.display = "flex";
-            window.scrollTo(0, scrollPosicao);
-          });
-        });
-
-        const botaoOrcamento = card.querySelector(
-          ".cardSelecionado__botaoOrcamento"
-        );
-        botaoOrcamento.addEventListener("click", function () {
-          // Lógica para o botão "Solicitar orçamento"
+          criarCardSelecionado();
         });
       });
     }

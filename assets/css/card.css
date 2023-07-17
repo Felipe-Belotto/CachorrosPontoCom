@@ -1,12 +1,53 @@
-.card,
-.card-ativo {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  min-width: 300px;
+  max-height: 100%;
+  text-align: center;
   border-radius: 5px;
+  border: 1px rgba(0, 0, 0, 0.582) solid;
   margin: 5px;
+  background-color: rgba(54, 31, 1, 0.651);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.card-ativo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column !important;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  gap: 10px;
+  border-radius: 5px;
+  margin: 10px 5px;
   backdrop-filter: blur(5px);
+  color: black;
+}
+
+.card-ativo .imagem {
+  margin: 20px 0 0 0;
+}
+
+.card__selecionado {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__nome__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card .imagem {
@@ -23,14 +64,29 @@
   font-weight: 500;
   height: 45px;
   color: white;
-  margin: 10px 0 0 0;
 }
 
-.card .curtidas,
-.card__botaoCurtir p {
+.card .curtidas {
+  padding: 0;
   font-size: 16px;
   font-weight: 400;
   color: white;
+}
+
+.card__botaoCurtir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: default;
+}
+
+.card__botaoCurtir img {
+  width: 1em;
+}
+
+.card__botaoCurtir img:hover {
+  cursor: pointer;
 }
 
 .card .descricao {
@@ -54,68 +110,12 @@
   width: 70%;
 }
 
+.card__botaoCurtir p {
+  font-size: 20px;
+}
+
 .card .regiao {
   text-transform: uppercase;
-}
-
-.card {
-  display: flex;
-  flex: 1;
-  min-width: 300px;
-  max-height: 100%;
-  text-align: center;
-  border: 1px rgba(0, 0, 0, 0.582) solid;
-  background-color: rgba(54, 31, 1, 0.651);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
-
-.card-ativo {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: column !important;
-  width: 50%;
-  height: 100%;
-  text-align: center;
-  gap: 10px;
-  color: black;
-  margin: 0;
-}
-
-.card-ativo .imagem {
-  margin: 20px 0 0 0;
-}
-
-.card__selecionado {
-  height: 100vh;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.card__nome__container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card__botaoCurtir {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  cursor: default;
-}
-
-.card__botaoCurtir img {
-  width: 1em;
-}
-
-.card__botaoCurtir img:hover {
-  cursor: pointer;
 }
 
 .cardSelecionado__botaoOrcamento {
@@ -159,7 +159,7 @@
     cursor: pointer;
   }
 
-  .card-ativo .imagem {
+  .card-ativo .imagem{
     width: 100%;
     height: 100%;
   }

@@ -55,6 +55,10 @@
   border-radius: 4px;
 }
 
+.card .imagem:hover {
+  cursor: pointer;
+}
+
 .card .titulo {
   display: flex;
   justify-content: center;
@@ -129,7 +133,6 @@
 
 .cardSelecionado__botaoVoltar:hover {
   background-color: rgba(90, 48, 0, 0.534);
-  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

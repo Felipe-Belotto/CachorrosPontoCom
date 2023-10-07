@@ -12,7 +12,7 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-button {
+button:hover {
   cursor: pointer
 }
 

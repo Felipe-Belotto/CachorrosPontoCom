@@ -1,8 +1,10 @@
 .menu__lateral-container {
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
+  z-index: 1000;
 }
 
 .menu__lateral {
@@ -14,7 +16,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.518);
+  backdrop-filter: blur(1px);
   height: 150px;
   padding: 25px;
   border-bottom: 1px black solid;

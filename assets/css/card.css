@@ -9,10 +9,10 @@
   text-align: center;
   border-radius: 5px;
   border: 1px rgba(0, 0, 0, 0.582) solid;
-  margin: 5px;
   background-color: rgba(54, 31, 1, 0.651);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px;
   padding: 10px;
 }
 
@@ -93,20 +93,25 @@
 }
 
 .card .descricao {
+  background-color: rgba(0, 0, 0, 0.44);
   font-size: 20px;
   display: none;
   justify-content: start;
   align-items: center;
   flex-direction: column;
   color: white;
-  padding: 10px 020px 0;
+  padding: 10px 20px;
   font-weight: 400;
-  border-radius: 5px;
-  gap: 15px;
+  border-radius: 4px;
+  gap: 16px;
+  height: auto;
 }
 
 .card .descricao strong {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.586);
   font-weight: bold;
+  padding: 8px;
 }
 
 .card .descricao p {
